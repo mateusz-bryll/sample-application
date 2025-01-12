@@ -1,0 +1,26 @@
+<mat-card *ngIf="person$ | async let person">
+  <mat-card-header>
+    <mat-card-title>Display data</mat-card-title>
+    <mat-card-subtitle>Readonly form controls bind to observable from service</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="display-grid">
+      <mat-form-field>
+        <mat-label>First name</mat-label>
+        <input matInput disabled [value]="person.firstName">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Last name</mat-label>
+        <input matInput disabled [value]="person.lastName">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Email address</mat-label>
+        <input matInput disabled [value]="person.email">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Phone number</mat-label>
+        <input matInput disabled [value]="person.phone">
+      </mat-form-field>
+    </div>
+  </mat-card-content>
+</mat-card>
