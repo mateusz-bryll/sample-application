@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="sample-application:serve" type="NxRunConfigurationType" nameIsGenerated="true">
-    <option name="nx-projects" value="sample-application" />
+  <configuration default="false" name="sample-application,sample-api:serve" type="NxRunConfigurationType" nameIsGenerated="true">
+    <option name="nx-projects" value="sample-application,sample-api" />
     <option name="nx-targets" value="serve" />
     <option name="nx-target-configuration" value="" />
     <envs />

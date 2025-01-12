@@ -1,13 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable} from "rxjs";
-import {ApiMock, ApiMockService} from "../../../utils";
-
-export interface Person {
-  firstName: string;
-  lastName: string;
-  email: string;
-  phone: string;
-}
+import {Person} from "@sample-application/person-model";
+import {ApiService} from "../../../utils";
 
 @Injectable({
   providedIn: 'root'
@@ -15,9 +9,8 @@ export interface Person {
 export class CommunicationService {
 
   private _subject$: BehaviorSubject<Person>;
-  private _api: ApiMock<Person>;
 
-  constructor(api: ApiMockService) {
+  constructor(private readonly _api: ApiService) {
     this._subject$ = new BehaviorSubject<Person>({
       firstName: '',
       lastName: '',
@@ -25,13 +18,6 @@ export class CommunicationService {
       phone: ''
     });
     this.currentPerson$ = this._subject$.asObservable();
-
-    this._api = api.create({
-      firstName: 'John',
-      lastName: 'Doe',
-      email: 'john.doe@example.com',
-      phone: '123456789'
-    }, 1000);
   }
 
   currentPerson$: Observable<Readonly<Person>>;
@@ -41,6 +27,6 @@ export class CommunicationService {
   }
 
   fetchPersonData() {
-    this._api.get().subscribe(data => { this.updateCurrentPerson(data) });
+    this._api.getPerson(1).subscribe(data => { this.updateCurrentPerson(data) });
   }
 }

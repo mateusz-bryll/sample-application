@@ -3,8 +3,9 @@ import { CommonModule } from '@angular/common';
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatCard, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle} from "@angular/material/card";
-import {CommunicationService, Person} from "../communication-service/communication.service";
+import {CommunicationService} from "../communication-service/communication.service";
 import {Observable} from "rxjs";
+import {Person} from "@sample-application/person-model";
 
 @Component({
   selector: 'app-component-a',

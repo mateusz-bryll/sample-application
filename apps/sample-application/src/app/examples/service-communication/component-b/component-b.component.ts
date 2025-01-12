@@ -2,11 +2,12 @@ import {Component, OnDestroy} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {FormBuilder, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {Subscription} from "rxjs";
-import {CommunicationService, Person} from "../communication-service/communication.service";
+import {CommunicationService} from "../communication-service/communication.service";
 import {MatCard, MatCardActions, MatCardContent, MatCardHeader, MatCardSubtitle, MatCardTitle} from "@angular/material/card";
 import {MatFormField, MatLabel} from "@angular/material/form-field";
 import {MatInput} from "@angular/material/input";
 import {MatButton} from "@angular/material/button";
+import {Person} from "@sample-application/person-model";
 
 @Component({
   selector: 'app-component-b',
@@ -29,7 +30,7 @@ export class ComponentBComponent implements OnDestroy {
     });
 
     this._personDataSubscription = _communication.currentPerson$.subscribe(person => {
-      this.personForm.setValue(person);
+      this.personForm.patchValue(person);
     });
   }
 

@@ -1,1 +1,1 @@
-export { ApiMockService, ApiMock } from './api-mock.service';
+export { ApiService } from './api.service';
