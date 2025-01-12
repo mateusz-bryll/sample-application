@@ -1,0 +1,24 @@
+.mat-toolbar{
+  color: var(--mat-sys-primary);
+  background: var(--mat-sys-primary-container);
+}
+
+.container {
+  height: calc(100% - 64px);
+}
+
+.menu {
+  width: 240px;
+  height: calc(100% - 64px);
+  border-right: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 0;
+  padding: .5rem;
+ }
+
+.content {
+  padding: 1rem;
+}
+
+.activated {
+  background-color: var(--mat-list-active-indicator-color, var(--mat-sys-secondary-container));
+}

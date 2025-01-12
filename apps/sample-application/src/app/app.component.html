@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>Sample application</span>
+</mat-toolbar>
+
+<mat-drawer-container class="container">
+  <mat-drawer #drawer mode="side" opened class="menu">
+    <mat-nav-list>
+      <a mat-list-item [routerLink]="['/service-communication']" [routerLinkActive]="['activated']">Service communication</a>
+    </mat-nav-list>
+  </mat-drawer>
+  <mat-drawer-content class="content">
+    <router-outlet></router-outlet>
+  </mat-drawer-content>
+</mat-drawer-container>
